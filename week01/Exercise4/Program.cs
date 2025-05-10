@@ -6,8 +6,7 @@ class Program
     {
        List<int> number = new List<int>();
         int userInput = 0; // Initialize userInput to 0
-        Console.WriteLine("Enter a list of numbers, type 0 when finished");
-        // Prompt the user to enter numbers until they enter 0
+        Console.WriteLine("Enter a list of numbers, type 0 when finished"); // Prompt the user to enter numbers until they enter 0
         // The loop continues until the user enters 0
        do{
         Console.WriteLine("Enter number:");
