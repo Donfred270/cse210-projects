@@ -5,44 +5,49 @@ public class Activity
 {
     private string _name;
     private string _description;
-    private string _duration;
+    protected int _duration;
 
-    //constructor
-    public Activity(string name, string description, string duration)
+    public Activity()
     {
-        _name = name;
-        _description = description;
-        _duration = duration;
+        _name = "Breathing Activity";
+        _description = "This activity will help you relax by walking you through breathing in and out slowly.";
+        _duration = 30; // valeur par défaut
     }
 
-    //methode for dispay the welcome message
     public void DisplayStartingMessage()
     {
         Console.WriteLine("How long, in seconds, would you like for your session?");
     }
+
     public void DisplayEndingMessage()
     {
         Console.WriteLine("Well done!!!");
     }
-   public void ShowSpinner(int seconds)
-{
-    List<string> spinner = new List<string> { "|", "/", "-", "\\", "|", "/", "-", "\\" };
 
-    int i = 0;
-    DateTime endTime = DateTime.Now.AddSeconds(seconds);
-
-    while (DateTime.Now < endTime)
+    public void ShowSpinner(int seconds)
     {
-        string s = spinner[i];
-        Console.Write(s);
-        Thread.Sleep(200);
-        Console.Write("\b \b"); 
+        List<string> spinner = new List<string> { "|", "/", "-", "\\", "|", "/", "-", "\\" };
 
-        i++;
-        if (i >= spinner.Count)
+        int i = 0;
+        DateTime endTime = DateTime.Now.AddSeconds(seconds);
+
+        while (DateTime.Now < endTime)
         {
-            i = 0;
+            Console.Write(spinner[i]);
+            Thread.Sleep(200);
+            Console.Write("\b \b");
+
+            i = (i + 1) % spinner.Count;
         }
     }
-}
+
+    public void ShowCountDown(int seconds)
+    {
+        for (int i = seconds; i > 0; i--)
+        {
+            Console.Write(i);
+            Thread.Sleep(1000);
+            Console.Write("\b \b");
+        }
+    }
 }

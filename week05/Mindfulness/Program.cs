@@ -1,10 +1,13 @@
 using System;
-
+namespace Mindfulness;
 class Program
 {
-    static void Main(string[] args)
+     static void Main(string[] args)
     {
-        Console.WriteLine("welcome to the mindfulness program");
-        
+        ListingActivity listing = new ListingActivity();
+        listing.Run();
+
+        ReflectingActivity reflecting = new ReflectingActivity();
+        reflecting.Run();
     }
 }
