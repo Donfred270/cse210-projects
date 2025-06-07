@@ -57,7 +57,6 @@ namespace Mindfulness
                         ReflectingActivity reflecting = new ReflectingActivity();
                         //set the name of the activity to reflecting activity
                         reflecting.Name = "Reflecting Activity";
-                        reflecting.DisplayStartingMessage();//display the welcome message
 
                         //start running the program
                         reflecting.Run();

@@ -55,13 +55,14 @@ namespace Mindfulness
             Console.WriteLine("Get ready...");
             ShowSpinner(5);
 
-            Console.Clear();
             DisplayPrompt();
             Console.Clear();
             DisplayQuestions();
 
             DisplayEndingMessage();
             ShowSpinner(3);
+
+            Console.WriteLine($"\nYou have completed another {Duration} seconds of the reflecting Activity.");
         }
 
         private string GetRandomPrompt()
