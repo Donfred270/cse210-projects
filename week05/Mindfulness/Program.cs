@@ -66,6 +66,8 @@ namespace Mindfulness
 
                     case "3":
                         ListingActivity listing = new ListingActivity();
+                        // set the name of the activity to listing activiy
+                        listing.Name = "Listing Activity";
                         listing.Run();
                         Console.WriteLine("Press any key to return to the menu...");
                         Console.ReadKey();
