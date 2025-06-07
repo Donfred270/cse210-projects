@@ -5,18 +5,37 @@ public class Activity
 {
     private string _name;
     private string _description;
-    protected int _duration;
+    private int _duration;
 
     public Activity()
     {
         _name = "Breathing Activity";
         _description = "This activity will help you relax by walking you through breathing in and out slowly.";
-        _duration = 30; // valeur par défaut
+        _duration = 30; // default value
     }
+
+    //getter and setters
+    public string Name
+    {
+        get { return _name; }
+        set{ _name = value; }
+    }
+
+    public string Description
+    {
+        get { return _description; }
+        set{ _description = value; }
+    }
+    public int Duration
+    {
+        get { return _duration; }
+        set{ _duration = value; }
+    }
+
 
     public void DisplayStartingMessage()
     {
-        Console.WriteLine("How long, in seconds, would you like for your session?");
+        Console.WriteLine($"Welcome to the {_name}.");
     }
 
     public void DisplayEndingMessage()

@@ -53,7 +53,7 @@ public class ListingActivity : Activity
     public List<string> GetListFromUser()
     {
         List<string> items = new List<string>();
-        DateTime endTime = DateTime.Now.AddSeconds(_duration);
+        DateTime endTime = DateTime.Now.AddSeconds(Duration);
 
         while (DateTime.Now < endTime)
         {
