@@ -91,7 +91,7 @@ namespace Mindfulness
             string input = Console.ReadLine();
             while (!string.IsNullOrWhiteSpace(input))
             {
-                Console.WriteLine("⛔ You must press Enter to continue.");
+             Console.WriteLine("⛔ You must press Enter to continue.");
                 input = Console.ReadLine();
             }
 
