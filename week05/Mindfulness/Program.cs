@@ -27,7 +27,6 @@ namespace Mindfulness
                         breathing.Name = "Breathing Activity";
                         breathing.Description = "This activity will help you relax by guiding you through slow breathing. Clear your mind and focus on your breathing.";
                         breathing.DisplayStartingMessage();
-                        Console.WriteLine(breathing.Duration);
 
                         Console.WriteLine("\nHow long, in seconds, would you like for your session?");
                         string input = Console.ReadLine();
@@ -35,7 +34,7 @@ namespace Mindfulness
 
                         while (!int.TryParse(input, out duration) || duration <= 0)
                         {
-                            Console.WriteLine("⛔ Veuillez entrer une durée valide (en secondes) : ");
+                            Console.WriteLine("Veuillez entrer une durée valide (en secondes) : ");
                             input = Console.ReadLine();
                         }
 
@@ -74,7 +73,7 @@ namespace Mindfulness
                         break;
 
                     case "4":
-                        Console.WriteLine("👋 Goodbye!");
+                        Console.WriteLine("Goodbye!");
                         quit = true;
                         break;
 
@@ -87,66 +86,3 @@ namespace Mindfulness
         }
     }
 }
-
-
- /*
-class Program
-{
-    static void Main(string[] args)
-    {
-        Console.WriteLine("Menu Options");
-        Console.WriteLine("     1. Start breathing activity");
-        Console.WriteLine("     2. Start reflecting activity");
-        Console.WriteLine("     3. Start listing activity");
-        Console.WriteLine("     4. Quit");
-
-        // the user choice
-        int number;
-        bool isValid = false;
-
-        while (!isValid)
-        {
-            Console.Write("Select a choice from the menu: ");
-            string input = Console.ReadLine();
-
-            if (!int.TryParse(input, out number))
-            {
-                Console.WriteLine("Welcome to the Breathing Activity");
-                Console.WriteLine("This activity will help you relax by walking your through breathing in and out slowly. Clear your mind and focus on your breathing.");
-                BreathingActivity breathing = new BreathingActivity();
-                breathing.DisplayStartingMessage();
-
-                //loop to verifiy the number entered by the user in seconds
-                int time;
-                bool usertime = false;
-
-                while (!usertime)
-                {
-                    string userInput = Console.ReadLine();
-
-                    if (!int.TryParse(input, out time))
-                    {
-                        Console.WriteLine("please enter a valid number");
-                    }
-                    else
-                    {
-                        usertime = true; // Sortir de la boucle
-                    }
-                }
-                Console.WriteLine("Get ready...");
-                breathing.ShowSpinner(5);
-                Console.WriteLine("");
-                Console.WriteLine("");
-                breathing.Run();
-
-
-
-            }
-
-            else
-            {
-                isValid = true; // Sortir de la boucle
-            }
-        }
-    }
-}*/

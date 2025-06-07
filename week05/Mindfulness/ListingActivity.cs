@@ -26,7 +26,7 @@ namespace Mindfulness
         {
             DisplayStartingMessage();
 
-            // On met à jour la description avec celle de cette activité spécifique
+            // Override the description for this specific activity
             Description = "This activity will help you reflect on times in your life when you have shown strength and resilience. This will help you recognize the power you have and how you can use it in other aspects of your life.";
             Console.WriteLine($"\n{Description}");
 
@@ -34,14 +34,14 @@ namespace Mindfulness
             string input = Console.ReadLine();
             int listingDuration;
 
-            // Validation de l'entrée utilisateur
+            // Validate user input
             while (!int.TryParse(input, out listingDuration) || listingDuration <= 0)
             {
-                Console.Write("⛔ Veuillez entrer une durée valide (en secondes) : ");
+                Console.Write("Please enter a valid duration (in seconds): ");
                 input = Console.ReadLine();
             }
 
-            // On utilise la propriété Duration héritée de Activity (pas le champ privé _duration)
+            // Use the Duration property inherited from Activity
             Duration = listingDuration;
 
             Console.Clear();

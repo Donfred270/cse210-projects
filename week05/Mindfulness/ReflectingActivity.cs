@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+
 namespace Mindfulness
 {
     public class ReflectingActivity : Activity
@@ -42,10 +43,10 @@ namespace Mindfulness
             string input = Console.ReadLine();
             int reflectDuration;
 
-            // Vérifie que l'utilisateur entre un nombre valide
+            // Validate the user's input
             while (!int.TryParse(input, out reflectDuration) || reflectDuration <= 0)
             {
-                Console.Write("⛔ Veuillez entrer une durée valide (en secondes) : ");
+                Console.Write("Please enter a valid duration (in seconds): ");
                 input = Console.ReadLine();
             }
 
@@ -62,7 +63,7 @@ namespace Mindfulness
             DisplayEndingMessage();
             ShowSpinner(3);
 
-            Console.WriteLine($"\nYou have completed another {Duration} seconds of the reflecting Activity.");
+            Console.WriteLine($"\nYou have completed another {Duration} seconds of the Reflecting Activity.");
         }
 
         private string GetRandomPrompt()
@@ -81,17 +82,17 @@ namespace Mindfulness
 
         private void DisplayPrompt()
         {
-            Console.WriteLine("Consider the following prompt: ");
+            Console.WriteLine("Consider the following prompt:");
             string prompt = GetRandomPrompt();
             Console.WriteLine($"\n--- {prompt} ---");
 
             Console.WriteLine("\nWhen you have something in mind, press Enter to continue.");
 
-            // Attendre uniquement une touche Entrée (vide)
+            // Wait for the user to press Enter only (no other input)
             string input = Console.ReadLine();
             while (!string.IsNullOrWhiteSpace(input))
             {
-             Console.WriteLine("⛔ You must press Enter to continue.");
+                Console.WriteLine("You must press Enter to continue.");
                 input = Console.ReadLine();
             }
 
